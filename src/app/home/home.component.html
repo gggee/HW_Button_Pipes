@@ -1,0 +1,23 @@
+<div class="container">
+    <!--Приняла решение использовать *ngIf *ngFor *ngSwitch 
+        на примере своей работы, связанное с дисконтными картами которые работают по системе накопления -->
+    <!--Decided to use *ngIf *ngFor *ngSwitch
+        on the example of his work, related to discount cards that work on the accumulation system -->
+    <h1>{{title}}</h1>
+
+    <div *ngIf="sum >= 1000">
+        <p>Amount of savings: {{sum | currency:'KZT':'symbol-narrow':'1.0-2'}}</p>
+        <p>Your discount percentage: {{perc | percent}}</p>
+    </div>
+
+    <div *ngIf="sum < 1000">
+        <p>Amount of savings: {{sum_empty}}</p>
+        <p>Your discount percentage: {{perc_empty | percent}}</p>
+    </div>
+
+    <div [ngSwitch]="card_status">
+        <p *ngSwitchCase="'active'">Card status: {{card_status}}</p>
+        <p *ngSwitchCase="'inactive'">Card status: {{card_status_empty}} </p>
+        <p *ngSwitchDefault>Card not created</p>
+    </div>
+</div>

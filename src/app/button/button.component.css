@@ -1,0 +1,21 @@
+.container {
+    margin: auto;
+    margin-top: 50px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    display: table;
+}
+
+.example-button-row {
+    display: table-cell;
+    max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+    margin: 50px 50px 50px 50px;
+}
+
