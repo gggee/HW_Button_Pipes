@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
+  selected: string = '';
 
+  showInfo(type: string) {
+    this.selected = type;
+  }
 }

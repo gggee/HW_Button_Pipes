@@ -2,9 +2,35 @@
     <h1>The biggest thing on the planet</h1>
     <section class="block">
         <div class="example-button-row">
-            <button mat-raised-button color="primary">Car</button>
-            <button mat-raised-button color="accent">Plane</button>
-            <button mat-raised-button color="warn">Ship</button>
+            <button mat-raised-button color="primary" (click)="showInfo('car')">Car</button>
+            <button mat-raised-button color="accent" (click)="showInfo('airplane')">Plane</button>
+            <button mat-raised-button color="warn" (click)="showInfo('ship')">Ship</button>
+        </div>
+
+        <div *ngIf="selected === 'car'">
+            <h1>The biggest car</h1>
+            <p>The German dump truck <b>Liebherr T 282B</b> is the largest truck in the world today. More
+                cargo,
+                than the Liebherr-T282B, no dump truck in the world can take on the back. In his body, you can freely
+                transport a large country house.</p>
+            <img src="/assets/car.jpg" alt="" width="350px" height="250px">
+        </div>
+
+        <div *ngIf="selected === 'airplane'">
+            <h1>The largest airplane</h1>
+            <p>The <b>An-225</b> is the heaviest cargo aircraft ever to take to the air. The only one
+                an aircraft that surpasses the An-225 in terms of wingspan is the Hughes H-4 Hercules, which belongs to the class
+                flying boats and took to the air only once in 1947.</p>
+            <img src="/assets/plane.jpg" alt="" width="350px" height="250px">
+        </div>
+
+        <div *ngIf="selected === 'ship'">
+            <h1>The largest ship</h1>
+            <p><b>Pioneering Spirit</b> is the largest ship in the world involved in the transportation of offshore drilling
+                platforms
+                and laying pipelines under water. The ship is owned by a Swiss company, but sails the sea
+                open spaces under the flags of Malta and Panama.</p>
+            <img src="/assets/ship.jpg" alt="" width="350px" height="250px">
         </div>
     </section>
 </div>
